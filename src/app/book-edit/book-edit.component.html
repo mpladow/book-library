@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <h1 class="page-heading">Edit Book</h1>
+  </div>
+  <hr>
+  <div class="row">
+    <form (ngSubmit)="onAddItem(f)" #f="ngForm">
+      <div class="row">
+        <div class="col-7 form-group">
+          <label for="name">Book Name</label>
+          <input type="text" id="name" class="form-control" name="name" ngModel required>
+        </div>
+        <div class="col-5 form-group">
+          <!-- <img [src]="editedBook.Image" class="img-responsive"> -->
+          <input type="file" id="image" class="form-control" name="image" ngModel (change)="onFileUpload($event)">
+        </div>
+        <div class="col-7 form-group">
+          <label for="name">Author</label>
+          <input type="text" id="author" class="form-control" name="author" ngModel required>
+        </div>
+
+        <hr>
+        <div class="col-12 form-group">
+          <label for="name">Genre</label>
+          <input type="text" id="genre" class="form-control" name="genre" ngModel>
+        </div>
+        <div class="col-12 form-group">
+          <label for="name">Started At</label>
+          <input type="text" id="startedAt" class="form-control" name="startedAt" ngModel>
+        </div>
+        <div class="col-12 form-group">
+          <label for="name">Finished At</label>
+          <input type="text" id="finishedAt" class="form-control" name="finishedAt" ngModel>
+        </div>
+        <!-- <div class="col-12 form-group">
+          <label for="name">Series</label>
+          <input type="text" id="series" class="form-control" name="Series">
+        </div> -->
+        <div class="row">
+          <div class="col-12"  style="padding:12px;">
+            <button class="btn btn-success" type="submit" [disabled]="!f.valid">{{editMode ? "Edit Book" : "Add Book"}} </button>
+            <button class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

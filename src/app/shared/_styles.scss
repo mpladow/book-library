@@ -1,0 +1,41 @@
+$colors: (
+  background: (
+    highlight: #f49e42,
+    highlight-light: lighten(#f49e42, 20%),
+        highlight-medlight: lighten(#f49e42, 10%),
+    highlight-dark: darken(#f49e42, 20%),
+    primarybg:  #ede9e6
+  ),
+  text: (
+    black: #0a0909,
+    light: #f9f7f7,
+    dark-grey:#3d3d3d,
+  ),
+  navbar: (
+    active: #f49e42,
+    a: #5b965b
+  )
+);
+@function get-color($color, $role: 'base') {
+  @return map-get(map-get($colors, $color), $role);
+}
+
+@mixin background-opacity($color, $opacity){
+  background: $color;
+  background: rgba($color, $opacity)
+}
+
+button{
+  border-radius: 24px;
+  padding:9px 12px;
+  margin-left: 12px;
+  min-width:100px;
+}
+.page-heading{
+  margin-top:24px;
+}
+a:not([href]):not([tabindex]){
+  cursor: pointer;
+  color: get-color(navbar, a);
+    transition: .2s all;
+}

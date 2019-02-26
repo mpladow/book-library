@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AC2BA,AAAA,MAAM,CAAA;EACJ,aAAa,EAAE,IAAI;EACnB,OAAO,EAAC,QAAQ;EAChB,WAAW,EAAE,IAAI;EACjB,SAAS,EAAC,KAAK;CAChB;;AACD,AAAA,aAAa,CAAA;EACX,UAAU,EAAC,IAAI;CAChB;;AACD,AAAA,CAAC,AAAA,IAAK,EAAA,AAAA,IAAC,AAAA,EAAM,IAAK,EAAA,AAAA,QAAC,AAAA,GAAU;EAC3B,MAAM,EAAE,OAAO;EACf,KAAK,EAvBA,OAAO;EAwBV,UAAU,EAAE,OAAO;CACtB;;AACD,AAAA,CAAC,AAAA,MAAM,CAAA;EACL,SAAS,EAAC,KAAK;EACf,UAAU,EAAE,OAAO;CACpB",
+    "sources": [
+        "book-edit.component.scss",
+        "../shared/_styles.scss"
+    ],
+    "names": [],
+    "file": "book-edit.component.css"
+}

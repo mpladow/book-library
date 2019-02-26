@@ -1,0 +1,85 @@
+button {
+  border-radius: 24px;
+  padding: 9px 12px;
+  margin-left: 12px;
+  min-width: 100px;
+}
+
+.page-heading {
+  margin-top: 24px;
+}
+
+a:not([href]):not([tabindex]) {
+  cursor: pointer;
+  color: #5b965b;
+  -webkit-transition: .2s all;
+  transition: .2s all;
+}
+
+a:hover {
+  font-size: 1.1em;
+  -webkit-transition: .2s all;
+  transition: .2s all;
+}
+
+.container {
+  position: relative;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f49e42), to(#f7b772));
+  background-image: linear-gradient(#f49e42, #f7b772);
+  border-radius: 12px;
+  margin: 24px 0;
+  -webkit-box-shadow: 2px 2px 24px 16px rgba(221, 221, 221, 0.4);
+          box-shadow: 2px 2px 24px 16px rgba(221, 221, 221, 0.4);
+  height: 200px;
+}
+
+.container .summary-circle-container {
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 265px;
+}
+
+.container .summary-circle-container .summary-circle {
+  position: relative;
+  background-color: #facfa2;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 16px;
+}
+
+.container .summary-circle-container .summary-circle .text-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
+  text-align: center;
+}
+
+.container .summary-circle-container .summary-circle span {
+  margin-top: 10px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.container .summary-circle-container .summary-circle p {
+  font-size: 0.8em;
+}
+
+.container .summary-bottom-container {
+  background: #facfa2;
+  background: rgba(250, 207, 162, 0.3);
+  position: absolute;
+  bottom: 0;
+  height: 42px;
+  width: 100%;
+  left: 0;
+  border-radius: 0px 0px 12px 12px;
+}
+/*# sourceMappingURL=books-summary.component.css.map */

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "navbar-bottom.component.scss"
+    ],
+    "names": [],
+    "file": "navbar-bottom.component.css"
+}

@@ -1,0 +1,27 @@
+<div class="container">
+  <app-books-summary></app-books-summary>
+  <div class="row">
+    <div class="col-12" style="padding:12px;">
+      <button class="btn btn-primary" (click)="navigateToNewBook()"><i class="fa fa-plus"></i> Add new book</button>
+      <button class="btn btn-primary" (click)="navigateToNewBook()"><i class="fa fa-plus"></i> Add reading time</button>
+    </div>
+  </div>
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Book Name</th>
+          <th>Genre</th>
+          <th>Started</th>
+          <th>Finished</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td><a (click)="onEditBook(book.BookId)">{{book.Name}}</a></td>
+          <td>{{book.GenreName}}</td>
+          <td>{{book.StartedAt | date: 'dd/MM/yyyy'}}</td>
+          <td>{{book.FinishedAt | date: 'dd/MM/yyyy'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,58 @@
+@import '../shared/styles';
+
+.container{
+  position: relative;
+  background-image: linear-gradient(get-color(background, highlight), get-color(background, highlight-medlight));
+  // background-color: get-color(background, highlight);
+  border-radius: 12px;
+ margin:24px 0;
+ box-shadow:2px 2px 24px 16px rgba(221, 221, 221, 0.4);
+height:200px;
+
+
+  .summary-circle-container{
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 265px;
+      .summary-circle{
+        position:relative;
+        background-color: get-color(background, highlight-light);
+        width:100px;
+        height:100px;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 16px;
+        .text-container{
+          position: absolute;
+          left:50%;
+          top:50%;
+          transform: translate(-50%, -40%);
+          text-align:center;
+        }
+        span{
+          margin-top:10px;
+          font-size: 1.3em;
+          font-weight: bold;
+        }
+        p {
+          font-size: 0.8em;
+
+        }
+      }
+  }
+        .summary-bottom-container{
+        // background-color: get-color(background, highlight-light);
+        @include background-opacity(get-color(background, highlight-light), 0.3);
+        position:absolute;
+        bottom:0;
+        height:42px;
+        width:100%;
+        left: 0;
+        border-radius:0px 0px 12px 12px;
+
+      }
+}
+
