@@ -21,14 +21,17 @@ export class BookListComponent implements OnInit {
   }
   showBookList() {
     this.bookService.getBooks()
-      .subscribe(data => this.books = data);
+      .subscribe((data) => {
+        this.books = data;
+        console.log(this.books);
+      });
   }
-  navigateToNewBook(){
+  navigateToNewBook() {
     this.router.navigate(['book-edit']);
   }
-onEditBook(id: number) {
-  this.bookService.startedEditing.next(id);
-  this.router.navigate(['book-edit', id]);
-}
+  onEditBook(id: number) {
+    this.bookService.startedEditing.next(id);
+    this.router.navigate(['book-edit', id]);
+  }
 
 }

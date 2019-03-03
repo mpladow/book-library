@@ -1,3 +1,6 @@
+import { Genre } from "./genre.model";
+
+
 export class Book {
   BookId: number;
   Name: string;
@@ -12,6 +15,9 @@ export class Book {
   IsSeries: boolean;
   BookNumberInSeries: boolean;
   Notes: string;
+  Genres: Genre[] = [];
+
+
 }
 export class BookVM {
   BookId: number;
@@ -27,6 +33,8 @@ export class BookVM {
   IsSeries: boolean;
   BookNumberInSeries: boolean;
   Notes: string;
+  Genres: Genre[] = [];
 }
+
 
 

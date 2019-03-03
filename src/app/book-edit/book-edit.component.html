@@ -4,41 +4,52 @@
   </div>
   <hr>
   <div class="row">
-    <form (ngSubmit)="onAddItem(f)" #f="ngForm">
+    <form [formGroup]="bookForm" (ngSubmit)="onAddItem(bookForm.value, bookForm.valid)">
       <div class="row">
         <div class="col-7 form-group">
           <label for="name">Book Name</label>
-          <input type="text" id="name" class="form-control" name="name" ngModel required>
+          <input type="text" id="name" class="form-control" name="name" formControlName="name" required>
         </div>
         <div class="col-5 form-group">
           <!-- <img [src]="editedBook.Image" class="img-responsive"> -->
-          <input type="file" id="image" class="form-control" name="image" ngModel (change)="onFileUpload($event)">
+          <!-- <input type="file" id="image" class="form-control" name="image" ngModel (change)="onFileUpload($event)"> -->
         </div>
         <div class="col-7 form-group">
-          <label for="name">Author</label>
-          <input type="text" id="author" class="form-control" name="author" ngModel required>
+          <label for="author">Author</label>
+          <input type="text" id="author" class="form-control" name="author" formControlName="author" required>
         </div>
-
         <hr>
         <div class="col-12 form-group">
-          <label for="name">Genre</label>
-          <input type="text" id="genre" class="form-control" name="genre" ngModel>
+          <label for="genres">Genres</label>
+          <angular2-multiselect [data]="dropdownList" [settings]="dropdownSettings" formArrayName="genres">
+
+          </angular2-multiselect>
+        </div>
+        <div class="col-6 form-group">
+          <label for="NoOfPages">Number of Pages</label>
+          <input type="number" id="NoOfPages" class="form-control" name="NoOfPages" formControlName="NoOfPages">
         </div>
         <div class="col-12 form-group">
-          <label for="name">Started At</label>
-          <input type="text" id="startedAt" class="form-control" name="startedAt" ngModel>
+          <label for="StartedAt">Started At</label>
+          <app-custom-datepicker formControlName="StartedAt" name="StartedAt"></app-custom-datepicker>
         </div>
         <div class="col-12 form-group">
-          <label for="name">Finished At</label>
-          <input type="text" id="finishedAt" class="form-control" name="finishedAt" ngModel>
+          <label for="FinishedAt">Finished At</label>
+          <input type="date" class="form-control" name="FinishedAt" formControlName="FinishedAt">
         </div>
+        <div class="col-12 form-group">
+          <label for="Notes">Notes</label>
+          <input type="text" id="Notes" class="form-control" name="Notes" formControlName="Notes">
+      </div>
         <!-- <div class="col-12 form-group">
           <label for="name">Series</label>
           <input type="text" id="series" class="form-control" name="Series">
         </div> -->
         <div class="row">
-          <div class="col-12"  style="padding:12px;">
-            <button class="btn btn-success" type="submit" [disabled]="!f.valid">{{editMode ? "Edit Book" : "Add Book"}} </button>
+          <div class="col-12" style="padding:12px;">
+            <button class="btn btn-success" type="submit"
+              [disabled]="!bookForm.valid">{{editMode ? "Edit Book" : "Add Book"}}
+            </button>
             <button class="btn btn-danger">Delete</button>
           </div>
         </div>

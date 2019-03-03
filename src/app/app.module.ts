@@ -1,7 +1,8 @@
 import { DropdownDirective } from './directives/dropdown.directive';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +16,7 @@ import { BookEditComponent } from './book-edit/book-edit.component';
 import { BookListService } from './services/booklist.service';
 import { HamburgerMenuDirective } from './directives/hamburger-menu.directive';
 import { FlashingElementDirective } from './directives/flashing-element.directive';
+import { CustomDatepickerComponent } from './custom-datepicker/custom-datepicker.component';
 
 
 @NgModule({
@@ -27,14 +29,17 @@ import { FlashingElementDirective } from './directives/flashing-element.directiv
     NavbarBottomComponent,
     BookEditComponent,
     HamburgerMenuDirective,
-    FlashingElementDirective
+    FlashingElementDirective,
+    CustomDatepickerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     FormsModule,
-    BrowserAnimationsModule
+    ReactiveFormsModule,
+    AngularMultiSelectModule
   ],
   providers: [BookListService],
   bootstrap: [AppComponent]

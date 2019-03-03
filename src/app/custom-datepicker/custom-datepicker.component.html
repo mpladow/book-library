@@ -1,0 +1,42 @@
+<div class="flex-container flex-center">
+  <div id="calendar-container" class="flex-container flex-column">
+    <div>
+      <form [formGroup]='dateForm' class="flex-container flex-center">
+        <input class='form-control' type="text" placeholder="DD/MM/YYYY" formControlName="dateSelected" [value]="dateSelected"
+          readonly='readonly' (click)='toggleCalendarDisplay()'>
+      </form>
+    </div>
+    <div class='overlay' [ngClass]="{'hide':!calendarIsShown}" (click)=toggleCalendarDisplay()>
+      <div class='calendar' >
+        <div class="height-20px"></div>
+        <div class="flex-container flex-center-horz">
+          <div class="height-20 month-selector" (click)="previousMonth()">
+            <i class="fa fa-chevron-left"></i>
+          </div>
+          <div class=width-20px></div>
+          <div class="height-20">{{date.format ('MMMM')}} {{date.format('YYYY')}}</div>
+          <div class=width-20px></div>
+          <div class="height-20 month-selector" (click)="nextMonth()">
+            <i class="fa fa-chevron-right"></i>
+          </div>
+        </div>
+        <div class="flex-container">
+          <div class="calendar-days flex-container flex-center">S</div>
+          <div class="calendar-days flex-container flex-center">M</div>
+          <div class="calendar-days flex-container flex-center">T</div>
+          <div class="calendar-days flex-container flex-center">W</div>
+          <div class="calendar-days flex-container flex-center">T</div>
+          <div class="calendar-days flex-container flex-center">F</div>
+          <div class="calendar-days flex-container flex-center">S</div>
+        </div>
+
+        <div class="flex-container flex-wrap">
+          <div *ngFor='let day of daysArr'>
+            <div class="calendar-days flex-container flex-center" (click)='onDaySelection(day)'
+              [ngClass]="{'inactive':!day, 'today':todayCheck(day), 'selected': isSelected(day)}">{{day?.date()}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

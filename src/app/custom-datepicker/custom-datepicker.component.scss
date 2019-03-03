@@ -1,0 +1,135 @@
+@import '../shared/styles';
+
+.overlay{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background-color: rgba(244, 244, 244, 0.5);
+  z-index: 999;
+}
+#calendar-container {
+  width:462px;
+}
+.calendar{
+  position:fixed;
+  width:462px;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  z-index: 99999;
+}
+.calendar-days{
+  width:60px;
+  height:60px;
+  background: #669999;
+  border: 3px solid #c2c2c2;
+  cursor: pointer;
+}
+.month-selector{
+  cursor: pointer;
+}
+
+.hide{
+  display:none;
+}
+
+.inactive{
+  opacity:0.6;
+}
+
+
+.fill-height-or-more {
+    min-height: 100%;
+}
+
+.flex-footer-pos {
+    flex: 1 0 auto;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-left {
+    -webkit-align-self: flex-start;
+    align-self: flex-start;
+}
+
+.flex-column {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.flex-center {
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.flex-center-horz {
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.flex-center-vert {
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.flex-left-row {
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.flex-right-row {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+.flex-right-column {
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
+
+.flex-left-column {
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-space-between-row {
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+
+.flex-space-between-column {
+    align-items: space-between;
+    -webkit-align-itemst: space-between;
+}
+
+.height-20px{
+  height: 20px;
+}
+
+.width-20px{
+  width: 20px;
+}
+
+.today {
+  color: red;
+}
+.selected{
+  background: peru;
+  opacity: 0.8;
+}
